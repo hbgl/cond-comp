@@ -1,0 +1,10 @@
+/.git/
+/.github/
+/.gitignore
+/.vscode/
+/test/
+/src/
+/ava.config.js
+/babel.config.js
+/tsconfig.build.json
+/tsconfig.json

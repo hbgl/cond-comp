@@ -1,0 +1,27 @@
+{
+  "name": "cond-comp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "ava",
+    "build": "rimraf ./dist &&  tsc --project tsconfig.build.json && babel ./dist --out-dir ./dist"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^8.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@types/node": "^18.7.20",
+    "ava": "^4.3.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.8.3"
+  }
+}
