@@ -28,7 +28,6 @@
     "acorn": "^8.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.19.3",
     "@types/node": "^18.7.20",
     "ava": "^4.3.3",
     "rimraf": "^3.0.2",
