@@ -1,15 +1,28 @@
 {
   "name": "cond-comp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Alter JavaScript code through `if` statements that can be statically evaluated at build time.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "ava",
     "build": "rimraf ./dist &&  tsc --project tsconfig.build.json && babel ./dist --out-dir ./dist"
   },
-  "author": "",
+  "author": "hbgl <gohbgl@gmail.com> (https://hbgl.dev)",
   "license": "MIT",
+  "homepage": "https://github.com/hbgl/cond-comp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbgl/cond-comp.git"
+  },
+  "keywords": [
+    "preprocessor",
+    "pragma",
+    "build",
+    "compiler",
+    "static if",
+    "conditional compilation"
+  ],
   "dependencies": {
     "acorn": "^8.8.0"
   },
