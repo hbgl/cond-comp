@@ -522,7 +522,7 @@ function setEvaluationResults(ifBlocks: IfBlock[], result: EvaluationResult) {
 function makeEvaluationError(error: EvaluationError) {
     let message = `Evaluation error at line ${error.line} and column ${error.column}`;
     if (error.cause.message) {
-        message += error.cause.message;
+        message += `: ${error.cause.message}`;
     }
     return new CondCompEvalError(message, error);
 }
