@@ -4,9 +4,10 @@
   "description": "Alter JavaScript code through `if` statements that can be statically evaluated at build time.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "private": true,
   "scripts": {
     "test": "ava",
-    "build": "rimraf ./dist &&  tsc --project tsconfig.build.json && babel ./dist --out-dir ./dist"
+    "build": "ts-node build.ts"
   },
   "author": "hbgl <gohbgl@gmail.com> (https://hbgl.dev)",
   "license": "MIT",
