@@ -2,8 +2,8 @@
   "name": "cond-comp",
   "version": "1.0.0",
   "description": "Alter JavaScript code through `if` statements that can be statically evaluated at build time.",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "private": true,
   "scripts": {
     "test": "ava",
