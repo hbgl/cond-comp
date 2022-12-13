@@ -1,6 +1,6 @@
 # Conditional compilation
 
-This library provides a mechanism to alter JavaScript code via `if` statements that can be statically evaluated at build time.
+This library allows you to alter JavaScript code through `if` statements that can be statically evaluated at build time.
 
 ## Example
 
