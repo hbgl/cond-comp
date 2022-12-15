@@ -103,6 +103,32 @@ console.log("not foo and baz");
 // #endif
 ```
 
+## CLI
+
+This library comes bundled with a console application that allows you to compile files from the command line.
+
+```
+npx cond-comp
+```
+
+```
+Usage: cond-comp [options] <files...>
+
+Conditionally compile JS code files with #if, #elseif, #else, #endif comments.
+Currently the program can only modify files in place via the required option -i.
+
+Arguments:
+  files                input files
+
+Options:
+  -g --glob            treat input files as glob patterns
+  -v, --var <vars...>  context variables, e.g. DEBUG or ENV=local
+  -e, --env <file>     env file to use as the context (uses dotenv and dotenv-expand)
+  --dry-run            do not modify files
+  -i, --in-place       modify files in place
+  -h, --help           display help for command
+```
+
 ## Advanced Usage
 
 ### Async / Await

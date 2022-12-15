@@ -1,5 +1,5 @@
 import test, { ExecutionContext } from 'ava';
-import { condComp, CondCompEvalError, CondCompParseError, condCompSync } from '../src/index';
+import { condComp, CondCompEvalError, CondCompParseError, condCompSync } from './index';
 
 /**
  * Square brackets symbolize whether the expression of the branch
