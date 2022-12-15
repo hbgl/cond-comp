@@ -39,8 +39,8 @@ export function makeCommand() {
         .description('Conditionally compile JS code files with #if, #elseif, #else, #endif comments.\nCurrently the program can only modify files in place via the required option -i.')
         .argument('<files...>', 'input files')
         .option('-g --glob', 'treat input files as glob patterns')
-        .option('-v, --var <vars...>', 'context variables, e.g. DEBUG or ENV=local')
         .option('-e, --env <file>', 'env file to use as the context (uses dotenv and dotenv-expand)')
+        .option('-v, --var <vars...>', 'context variables with, e.g. ENV=local  (uses dotenv and dotenv-expand)')
         .option('--dry-run', 'do not modify files')
         .requiredOption('-i, --in-place', 'modify files in place')
         .showHelpAfterError();
@@ -88,8 +88,17 @@ export async function createContext(prog: ProgramContext) {
     const options = command.opts();
     const context: Context = {};
 
+    let envContent = '';
+
     if (options.env !== undefined) {
-        const envContent = await fs.promises.readFile(options.env, { encoding: 'utf-8' });
+        envContent += await fs.promises.readFile(options.env, { encoding: 'utf-8' }) + '\n';
+    }
+
+    for (const varDef of options.var ?? []) {
+        envContent += varDef + '\n';
+    }
+
+    if (envContent !== '') {
         const env = dotenv.parse(envContent);
         const expanded = dotenvExpand.expand({
             ignoreProcessEnv: true,
@@ -101,26 +110,5 @@ export async function createContext(prog: ProgramContext) {
         Object.assign(context, expanded.parsed);
     }
 
-    for (const v of options.var ?? []) {
-        const kv = parseVar(v);
-        context[kv.key] = kv.value;
-    }
-
     return context;
 }
-
-/** @internal */
-export function parseVar(v: string): { key: string, value: any } {
-    const equalPos = v.indexOf('=');
-    if (equalPos === -1) {
-        return {
-            key: v,
-            value: true,
-        };
-    }
-    return {
-        key: v.slice(0, equalPos),
-        value: v.slice(equalPos + 1),
-    };
-}
-
