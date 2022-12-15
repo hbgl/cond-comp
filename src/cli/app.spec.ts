@@ -67,7 +67,7 @@ test('glob', async t => {
     const argv = [
         process.argv[0],
         process.argv[1],
-        '-i', '-v', 'FOO', '-g', '/*.js',
+        '-i', '-v', 'FOO=1', '-g', '/*.js',
     ];
 
     await run({ argv, fs });
