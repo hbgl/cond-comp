@@ -1,6 +1,6 @@
 # Conditional compilation
 
-[![CI](https://github.com/hbgl/cond-comp/workflows/CI/badge.svg)](https://github.com/hbgl/cond-comp/actions/workflows/ci.yaml) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hbgl/cond-comp/blob/master/LICENSE)
+[![CI](https://github.com/hbgl/cond-comp/workflows/CI/badge.svg)](https://github.com/hbgl/cond-comp/actions/workflows/ci.yaml) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hbgl/cond-comp/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/cond-comp.svg)](https://www.npmjs.com/package/cond-comp)
 
 This library allows you to alter JavaScript code through `if` statements that can be statically evaluated at build time.
 
