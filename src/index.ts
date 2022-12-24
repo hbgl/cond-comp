@@ -110,7 +110,7 @@ interface EvaluationError {
 
 interface EvaluationResultEntry {
     // 0: if branch hit
-    // 1 - x: elseif branch hit
+    // >0: elseif branch hit
     // -1: else branch hit
     branch: number,
     children?: EvaluationResultEntry[],
